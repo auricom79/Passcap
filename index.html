@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#244EA3">
+  <meta name="description" content="Concerts, musées, marchés : trouvez des sorties et événements avec des adaptations déclarées près de chez vous. Partagez vos envies et discutez entre membres.">
+  <title>Pass Cap — Sorties, événements et accessibilité près de chez vous</title>
+  <link rel="canonical" href="https://passcap.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Pass Cap">
+  <meta property="og:url" content="https://passcap.org/">
+  <meta property="og:title" content="Pass Cap — Les sorties qui font la différence !">
+  <meta property="og:description" content="Découvrez des sorties près de chez vous, gardez vos favoris, partagez vos envies et discutez autour des événements.">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Pass Cap","alternateName":"Passcap","url":"https://passcap.org/","inLanguage":"fr","description":"Sorties et événements en France métropolitaine et dans les DROM, avec informations sur les adaptations déclarées."}</script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/AtkinsonHyperlegible-Regular.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+<nav class="skip-links" aria-label="Accès rapide"><a href="#map-panel">Aller à la carte</a><a href="#search-form">Aller à la recherche</a><a href="#results">Aller aux résultats</a></nav>
+<header class="header">
+  <a class="brand" href="./" aria-label="Pass Cap, accueil"><span><span class="brand-name">pass<span class="brand-cap">cap</span></span><span class="brand-baseline">Les sorties qui font la différence !</span></span></a>
+  <nav class="site-nav" aria-label="Navigation principale"><button id="nav-home" type="button">Sortir…</button><button id="nav-events" type="button">Les événements</button><button id="nav-search" type="button">Rechercher ↗</button></nav><div class="header-right"><span class="edition">Métropole &amp; outre-mer</span><button class="account-header-button" id="account-btn" type="button">Mon compte</button></div>
+</header>
+<main id="main">
+  <section class="outing-home" id="sortir" aria-labelledby="intro-title">
+    <div class="outing-intro"><div><p class="eyebrow">Des envies, des rencontres, des souvenirs.</p><h1 id="intro-title">Sortir<span>…</span></h1></div><p>Un concert qui fait vibrer. Une expo qui surprend.<br>Et si le prochain bon moment était tout près ?</p></div>
+    <p class="member-teaser" id="member-teaser">Une sortie vous tente ? <button type="button" class="community-link" data-join-account>Créez votre compte gratuit</button> pour partager vos envies et discuter entre membres.</p>
+    <p id="home-location" class="home-location" role="status">Des idées dans toute la France · recherche de votre position…</p>
+    <section id="profile-filter-bar" class="profile-filter-bar" hidden aria-label="Filtre selon mon profil"><label><input type="checkbox" id="profile-filter-toggle" checked><strong>Événements adaptés à mon profil</strong></label><p id="profile-filter-description"></p><p id="profile-filter-status" role="status" aria-live="polite"></p></section>
+    <div id="outing-accordion" class="outing-accordion"></div>
+    <section class="join-community" id="join-community" aria-labelledby="join-title">
+      <div><p class="eyebrow">Les sorties, c’est encore mieux ensemble</p><h2 id="join-title">Une envie ? Partagez-la.</h2><p>Créez votre compte gratuit avec Google ou votre adresse e-mail. Un pseudo, un avatar, et de nouvelles idées à partager.</p></div>
+      <ul><li><strong>Ça me tente !</strong> Exprimez votre envie de participer à un événement.</li><li><strong>Vos favoris, toujours avec vous.</strong> Retrouvez vos sorties sur tous vos appareils.</li><li><strong>Une discussion avant la sortie.</strong> Posez vos questions et échangez entre membres sur chaque événement.</li></ul>
+      <div class="join-actions"><button type="button" class="community-primary" data-join-account>Créer mon compte gratuit</button><button type="button" class="community-secondary" data-open-newsletter>Découvrir la newsletter</button><p>Votre adresse e-mail et vos besoins restent privés.</p></div>
+    </section>
+    <section class="seo-intro" aria-labelledby="discover-title"><p><a href="/evenements">Tous les événements par département ↗</a></p><h2 id="discover-title">Des sorties près de chez vous, selon vos envies et vos besoins</h2><p>Concerts, expositions, cinéma, marchés, ateliers ou visites : explorez les événements d’aujourd’hui, de demain et du prochain week-end en France métropolitaine et dans les DROM. Choisissez votre département ou utilisez votre position pour trouver des idées à proximité.</p><p>Consultez les adaptations déclarées pour la mobilité, l’audition, la vision, le handicap intellectuel, l’autisme et le handicap psychique. Avec un compte, vous pouvez enregistrer vos besoins et activer ou désactiver le filtre correspondant. Les informations des organisateurs restent à confirmer avant votre visite.</p></section>
+  </section>
+  <section id="search-experience" hidden aria-label="Le moteur de recherche">
+  <div class="explore-layout">
+    <section class="map-panel" id="map-panel" aria-labelledby="map-title" tabindex="-1">
+      <div class="map-heading"><div><p class="eyebrow"><span class="section-number" aria-hidden="true">01</span> Choisissez votre territoire</p><h2 id="map-title">Prenez un nouveau cap.</h2></div><button class="text-button" id="clear-department" type="button" aria-label="Effacer le département">Toute la France</button></div>
+      <div class="map-selection"><h3 id="selected-territory">France métropolitaine &amp; DROM</h3><p id="territory-coverage">101 départements à explorer.</p></div>
+      <div id="france-map" class="france-map"><p>Chargement de la carte…</p></div>
+      <p id="map-hover" class="map-hover">Cliquez sur un département, ou choisissez-le dans la liste.</p>
+      
+      <div id="drom-maps" class="drom-maps" role="group" aria-label="Départements et régions d’outre-mer"></div>
+      
+    </section>
+    <form class="search-panel" id="search-form" role="search" aria-label="Trouver une sortie ou un lieu" tabindex="-1">
+      <div class="panel-heading"><span class="section-number" aria-hidden="true">02</span><h2>Préparons votre sortie</h2></div>
+      <div class="search-grid">
+        <label class="field"><span>Département ou DROM</span><select id="department" aria-describedby="department-help"><option value="">Choisir un territoire</option></select></label>
+        <p class="field-help" id="department-help">Choisissez dans la liste ou sur la carte.</p>
+        <label class="field"><span>Commune <span class="optional">· facultatif</span></span><input type="search" id="city" list="city-options" placeholder="Nom de la commune" autocomplete="off" disabled><datalist id="city-options"></datalist></label>
+        <label class="field"><span>Pour qui ?</span><select id="age"><option value="">Tous les âges</option><option value="child">Enfant · 0–11 ans</option><option value="teen">Adolescent · 12–17 ans</option><option value="adult">Adulte · 18 ans et plus</option></select></label>
+        <label class="field"><span>Quel besoin ?</span><select id="need"><option value="">Tous les besoins</option><option value="motor">Mobilité et déplacement</option><option value="hearing">Adaptations pour l’audition</option><option value="visual">Adaptations pour la vision</option><option value="mental">Accueil du handicap intellectuel</option><option value="autism">Autisme et besoins sensoriels</option><option value="psychic">Accueil du handicap psychique</option></select></label>
+        <label class="field"><span>Type d’événement</span><select id="event-kind"><option value="">Tous les événements</option><option value="exhibition">Expositions</option><option value="theatre">Théâtre</option><option value="opera">Opéra</option><option value="concert">Concerts</option><option value="sport">Sport et matchs</option><option value="dance">Danse</option><option value="cinema">Cinéma</option><option value="workshop">Ateliers</option><option value="visit">Visites</option><option value="other">Autres événements</option></select></label>
+        <label class="field"><span>Mot-clé <span class="optional">· facultatif</span></span><input type="search" id="query" placeholder="Musée, atelier, musique…"></label>
+      </div>
+      <fieldset class="date-filter" id="period-wrap" aria-describedby="period-help">
+        <legend>Quand ? <span class="optional">· événements</span></legend>
+        <div class="date-choices">
+          <label class="date-choice"><input type="radio" name="period" value="today" checked><span>Aujourd’hui</span></label>
+          <label class="date-choice"><input type="radio" name="period" value="tomorrow"><span>Demain</span></label>
+          <label class="date-choice"><input type="radio" name="period" value="week"><span>Cette semaine</span></label>
+          <label class="date-choice"><input type="radio" name="period" value="date"><span>Choisir une date</span></label>
+          <label class="date-choice"><input type="radio" name="period" value="range"><span>Choisir une période</span></label>
+        </div>
+        <div class="date-inputs" id="date-inputs" hidden>
+          <label class="field" id="single-date-wrap" hidden><span>Date</span><input type="date" id="date" disabled></label>
+          <label class="field" id="date-from-wrap" hidden><span>Du</span><input type="date" id="date-from" disabled></label>
+          <label class="field" id="date-to-wrap" hidden><span>Au <span class="optional">· inclus</span></span><input type="date" id="date-to" disabled aria-describedby="date-error"></label>
+        </div>
+        <p id="date-error" class="date-error" role="status" hidden></p>
+        <p id="period-help" class="field-help">Dates des événements, en heure locale. Les lieux restent affichés, horaires à confirmer.</p>
+      </fieldset>
+      <div class="search-bottom"><label class="check-label"><input type="checkbox" id="unknown" checked aria-describedby="unknown-help"><span>Afficher aussi les fiches incomplètes</span></label><p id="unknown-help" class="field-help">L’âge ou le besoin choisi peut rester à vérifier.</p></div>
+      <button class="primary" type="submit">Aller aux résultats</button>
+      <p class="local-time-note">Les résultats suivent vos choix.</p>
+    </form>
+  </div>
+  <div class="catalog-strip"><p>Dans le carnet</p><div class="map-totals" id="map-totals"></div><p class="catalog-note">Fiches importées.<br>Couverture non exhaustive.</p></div>
+  <section class="browse" aria-labelledby="results-title" id="results" tabindex="-1">
+    <div class="section-top"><div class="tabs" role="tablist" aria-label="Type de recherche"><button role="tab" id="tab-all" data-tab="all" aria-selected="true" aria-controls="results-panel">Tout explorer</button><button role="tab" id="tab-event" data-tab="event" aria-selected="false" aria-controls="results-panel" tabindex="-1">Événements</button><button role="tab" id="tab-place" data-tab="place" aria-selected="false" aria-controls="results-panel" tabindex="-1">Les lieux</button></div></div>
+    <div class="results-heading"><div><h2 id="results-title" tabindex="-1">Choisissez votre territoire</h2><p id="count" role="status" aria-live="polite" aria-atomic="true">Chargement des fiches…</p></div><button id="reset" class="text-button">Réinitialiser les filtres</button></div>
+    <div id="event-availability" class="event-availability" hidden><span id="event-availability-text"></span><button type="button" class="text-button" id="upcoming-events">Voir les prochaines dates</button></div>
+    <div class="results-guide"><p class="status-key"><span class="status-declared">✓ Déclaré</span><span>? Non renseigné</span><span class="status-unavailable">− Indiqué non adapté</span></p><details class="signage-key"><summary>Légende des pictogrammes</summary><ul id="signage-legend"></ul><p>Les six pictogrammes restent visibles. En bleu : adaptation déclarée. En gris : non renseigné (?). En rouge : indiqué non adapté (−). Une information manquante ne signifie pas que le lieu est inaccessible. L’accueil reste à confirmer avant la visite.</p><p>Les contacts non renseignés sont masqués. Le bouton Info ouvre les détails et les sources.</p></details></div>
+    <div id="results-panel" role="tabpanel" aria-labelledby="tab-all"><div id="department-state" class="department-state"></div><div class="cards" id="cards"></div><div id="empty" class="empty" hidden><h3>Aucune fiche pour cette recherche</h3><p>Essayez un autre besoin, élargissez la zone ou affichez les fiches incomplètes.</p><button class="primary" id="empty-reset">Réinitialiser les filtres</button></div><button id="more" class="more" hidden>Voir plus de résultats</button></div>
+  </section>
+  </section>
+</main>
+<footer class="footer"><div class="footer-invitation"><p>Un prochain bon moment ?</p><a href="#sortir">On sort ensemble. ↗</a></div><div><a class="brand footer-brand" href="./" aria-label="Passcap, accueil"><span class="brand-name">pass<span class="brand-cap">cap</span></span></a><p>Les sorties qui font la différence !</p></div><div class="footer-data"><p id="snapshot">Sources publiques · Métropole et DROM</p><button class="text-button" id="sources-btn">Sources et limites des informations</button><p><a href="/confidentialite.html">Confidentialité</a></p></div></footer>
+<dialog id="newsletter-confirmation" aria-labelledby="guest-confirm-title"><div class="dialog-bar"><span class="eyebrow">Newsletter Pass Cap</span><button class="close" id="guest-confirm-close" type="button" aria-label="Fermer la confirmation de newsletter">×</button></div><div id="guest-confirm-content" aria-live="polite" class="newsletter-invitation-body"></div></dialog>
+<dialog id="newsletter-invitation" aria-labelledby="newsletter-invitation-title"><div class="dialog-bar"><span class="eyebrow">Votre rendez-vous du jeudi</span><button class="close" type="button" id="newsletter-invitation-close" aria-label="Fermer la proposition de newsletter">×</button></div><div class="newsletter-invitation-body"><p class="account-kicker">Des idées de sorties dans votre boîte mail</p><h2 id="newsletter-invitation-title">Vos sorties du jeudi.</h2><p>Chaque jeudi, jusqu’à six idées de sorties dans le département de votre choix. <strong>Sans compte, sans mot de passe.</strong></p><form id="guest-newsletter-form"><label class="field"><span>Votre adresse e-mail</span><input id="guest-newsletter-email" type="email" autocomplete="email" maxlength="254" required></label><label class="field"><span>Votre département</span><select id="guest-newsletter-department" required><option value="">Chargement des départements…</option></select></label><p class="field-help">En m’inscrivant, je choisis de recevoir la newsletter hebdomadaire Pass Cap. Un e-mail me permettra de confirmer mon inscription. Désinscription dans chaque newsletter. <a href="/confidentialite.html">Confidentialité</a></p><button type="submit" class="community-primary" id="guest-newsletter-submit" disabled>Recevoir mes idées de sorties</button><p id="guest-newsletter-status" role="status" aria-live="polite"></p></form><button type="button" class="community-link" id="newsletter-invitation-later">Plus tard</button></div></dialog>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-bar"><span id="detail-kind" class="eyebrow"></span><button type="button" class="close" id="detail-close" aria-label="Fermer la fiche">×</button></div><div id="detail-content"></div></dialog>
+<dialog id="about" aria-labelledby="about-title"><div class="dialog-bar"><span class="eyebrow">DES INFORMATIONS TRAÇABLES</span><button type="button" class="close" id="about-close" aria-label="Fermer les informations">×</button></div><h2 id="about-title">Ce que vous trouverez ici</h2><p>Pass Cap réunit des lieux et des événements en France métropolitaine et dans les cinq DROM pour aider les familles et les proches à préparer une sortie. Seules les fiches avec au moins une adaptation explicitement déclarée sont retenues. Les offres d’emploi et annonces de recrutement sont exclues. Cliquez sur un département pour consulter les fiches importées dans ce territoire.</p><h3>Les sources de l’agenda</h3><div id="source-list"></div><p class="small-note">Fond de carte : <a href="https://github.com/gregoiredavid/france-geojson" target="_blank" rel="noopener noreferrer">France GeoJSON, IGN Admin Express 2018</a>, Licence Ouverte. Noms et codes vérifiés auprès de l’API Découpage administratif de data.gouv.fr. Les contours sont simplifiés pour la navigation.</p><p class="small-note">Pictogrammes : <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer">Lucide</a> · <a href="icons-license.txt">licence ISC</a>.</p><h3>Une indication, pas une garantie</h3><p>Les caractéristiques sont celles déclarées dans les sources. Elles ne constituent ni une vérification sur place ni une garantie d’accueil individuel. Une adaptation pour un besoin ne prouve pas une adaptation pour un autre.</p><p>Les âges non renseignés restent marqués « À vérifier ». Les tranches enfant (0–11 ans), adolescent (12–17 ans) et adulte (18 ans et plus) servent uniquement à la recherche. Une tranche peut recouper partiellement les âges accueillis : consultez toujours le détail.</p><h3>Couverture et période</h3><p>La carte permet d’explorer 101 départements. L’annuaire retient une sélection de lieux culturels, de loisirs et d’information touristique avec au moins une adaptation déclarée. Il n’est pas exhaustif. Le nombre de fiches varie selon les sources et les territoires ; certains territoires peuvent ne comporter aucune fiche répondant aux critères, notamment dans les DROM. Les fiches sont importées à la date indiquée ; la dernière version validée est conservée si une source est indisponible. L’agenda contient les séances des 90 jours suivant l’import et masque les séances déjà terminées. Les événements sans département identifiable, annulés, reportés, complets ou uniquement en ligne sont exclus, ainsi que les annonces de recrutement et de recherche d’emploi. Les chiffres de la carte correspondent à cette sélection, avant les filtres personnels. Les horaires sont affichés dans le fuseau du département. Les agendas des offices de tourisme sont aussi importés via DATAtourisme et SIRTAQUI, ainsi que des programmations de musées, de bibliothèques, de culture scientifique et les séances des cinémas indépendants SCARE.</p><p>La consultation des sorties est libre. Un compte Google permet d’enregistrer des favoris et des envies et de participer aux discussions. Seuls le pseudo et l’avatar sont publics ; l’adresse e-mail reste privée. L’envie de participer est anonyme sauf si vous choisissez d’afficher votre profil. Vous pouvez supprimer vos messages, masquer un membre ou signaler un message. La suppression du compte efface le profil et ses contributions. La déclaration du handicap et des besoins dans le profil est facultative, privée et soumise à un choix explicite. Ces informations peuvent être effacées à tout moment depuis le profil ; elles ne sont pas affichées aux autres membres.</p></dialog>
+<dialog id="account-dialog" aria-labelledby="account-title"><div class="dialog-bar"><h2 id="account-title">Mon espace Pass Cap</h2><button id="account-close" type="button" class="close" aria-label="Fermer mon compte">×</button></div><p id="account-status" role="status" aria-live="polite"></p><div id="account-content"></div></dialog>
+<script type="module" src="app.js"></script>
+</body>
+</html>
